@@ -1,6 +1,6 @@
 # Kirby Inline Footnotes
 
-This very basic plugin borrows the functionality of [@sylvainjule](https://github.com/sylvainjule/kirby-footnotes) and extends Kirby 3 and 4 with inline footnotes.
+This very basic plugin borrows the functionality of [@sylvainjule](https://github.com/sylvainjule/kirby-footnotes) and extends [Kirby 3 and 4](http://getkirby.com) with inline footnotes.
 
 ## 1. Installation
 
