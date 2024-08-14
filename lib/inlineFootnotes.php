@@ -4,9 +4,10 @@ class InlineFootnotes
 {
   public static array $footnotes = [];
 
-  public static function convert($text)
+  public static function convert($field)
   {
 
+    $text = $field->text();
     $matches = null;
     $references = null;
     $notes = null;
@@ -21,7 +22,7 @@ class InlineFootnotes
       $order = 1;
 
       foreach ($notes as $key => $note) {
-        $data = ['count' => $count, 'order' => $order, 'note' => $note];
+        $data = ['count' => $count, 'order' => $order, 'note' => $note, 'parent' => $field->parent()->slug()];
         $text = self::str_replace_first($references[$key], snippet('footnotes_reference', $data, true), $text);
         $notesArr[] = $data;
 
@@ -29,6 +30,8 @@ class InlineFootnotes
         $order++;
       }
 
+      return $text;
+    } else {
       return $text;
     }
   }

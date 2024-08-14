@@ -6,11 +6,11 @@ require_once __DIR__ . '/lib/inlineFootnotes.php';
 
 Kirby::plugin('lkssmnt/inline-footnotes', [
   'fieldMethods' => [
-    'inlinefootnotes' => function ($field) {
-      return InlineFootnotes::convert($field->text());
+    'inlinefootnotes' => function ($field) {      
+      return InlineFootnotes::convert($field);
     },
     'ifn' => function ($field) {
-      return InlineFootnotes::convert($field->text());
+      return InlineFootnotes::convert($field);
     }
   ],
   'snippets'     => [
